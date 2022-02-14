@@ -4,11 +4,19 @@ let getHomePage = async (req, res) => {
 
     try {
         let data = await db.User.findAll();
-    } catch (err) {
+        console.log('--------------');
+        console.log(data);
+        console.log('--------------');
 
+
+        return res.render('homepage.ejs', {
+            data: JSON.stringify(data)
+        });
+    } catch (err) {
+        console.log(e);
     }
 
-    return res.render('homepage.ejs');
+
 }
 
 module.exports = { getHomePage: getHomePage };
