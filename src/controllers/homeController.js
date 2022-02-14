@@ -1,14 +1,14 @@
 import db from "../models/index";
 
-let getHomePage = (req, res) => {
+let getHomePage = async (req, res) => {
 
     try {
         let data = await db.User.findAll();
-    } catch (error) {
-        
+    } catch (err) {
+
     }
-    
+
     return res.render('homepage.ejs');
 }
 
-module.exports = {getHomePage: getHomePage};
+module.exports = { getHomePage: getHomePage };
